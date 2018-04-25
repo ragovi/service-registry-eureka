@@ -1,0 +1,27 @@
+version: '2'
+services:
+    eureka:
+      image: eureka-server:0.0.1-SNAPSHOT
+      ports:
+      - "8761:8761"
+
+    eureka-client:
+      image: eureka-client:0.0.1-SNAPSHOT
+      links:
+      - eureka
+      ports:
+      - "8080"
+
+    eureka-client-2:
+      image: eureka-client:0.0.1-SNAPSHOT
+      links:
+      - eureka
+      ports:
+      - "8080"
+
+    eureka-client-3:
+      image: eureka-client:0.0.1-SNAPSHOT
+      links:
+      - eureka
+      ports:
+      - "8080"
